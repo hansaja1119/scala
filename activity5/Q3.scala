@@ -12,9 +12,15 @@ object Q3 {
   }
 
   def main(args: Array[String]): Unit = {
-    println("Enter the number of Fibonacci numbers to print: ")
-    val n = scala.io.StdIn.readInt()
-    println(s"The first $n Fibonacci numbers are:")
-    printFibonacci(n)
+    try {
+      println("Enter the number of Fibonacci numbers to print: ")
+      val n = scala.io.StdIn.readInt()
+      println(s"The first $n Fibonacci numbers are:")
+      printFibonacci(n)
+    } catch {
+      case _: NumberFormatException =>
+        println("Please enter a valid integer.")
+    }
+
   }
 }

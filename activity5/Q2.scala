@@ -10,7 +10,7 @@ object Q2 {
   )
 
   def addBook(book: Book): Unit = {
-    if (!library.exists(_.isbn == book.isbn)) {
+    if (!checkBook(book.isbn)) {
       library += book
       println(s"Book added: ${book.title} by ${book.author}")
     } else {
