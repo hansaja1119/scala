@@ -9,11 +9,11 @@ object Q2Student {
   ): (Boolean, Option[String]) = {
     if (name.isEmpty) {
       (false, Some("Name cannot be empty."))
-    } else if (marks < 0 || marks > totalMarks) {
+    } else if (marks > totalMarks) {
       (
         false,
         Some(
-          "Marks should be positive and not exceed the total possible marks."
+          "Marks should not exceed the total possible marks."
         )
       )
     } else {
@@ -25,9 +25,11 @@ object Q2Student {
     println("Enter student's name:")
     val name = readLine()
     println("Enter student's marks:")
-    val marks = readLine().toInt
+    var marks = readLine().toInt
     println("Enter total possible marks:")
     val totalMarks = readLine().toInt
+
+    if (marks < 0) marks = 0
 
     val percentage = (marks.toDouble / totalMarks) * 100
     val grade = percentage match {
