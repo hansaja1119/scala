@@ -12,7 +12,7 @@ object LambdaQ3 {
   }
 
   def main(args: Array[String]): Unit = {
-    val input = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    val input = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)
     val output = filterPrime(input)
     println(output)
   }
